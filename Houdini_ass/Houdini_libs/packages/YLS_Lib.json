@@ -1,0 +1,57 @@
+{
+   "path":"$LibPath/yls_libs",
+   "env": [
+      {
+         "YLS_lib": "$LibPath/yls_libs"
+      },
+
+      {
+         "HOUDINI_OTLSCAN_PATH": {
+            "method": "append",
+            "value": [
+               "$YLS_lib/otls"
+            ]
+         }
+      },
+      {
+         "HOUDINI_TOOLBAR_PATH": {
+            "method": "append",
+            "value": [
+               "$YLS_lib/toolbar"
+            ]
+         }
+      },
+      {
+         "HOUDINI_DESK_PATH": {
+            "method": "append",
+            "value": [
+               "$YLS_lib/desktops"
+            ]
+         }
+      },
+      {
+         "HOUDINI_PYTHON_PANEL_PATH": {
+            "method": "append",
+            "value": [
+               "$YLS_lib/python39libs"
+            ]
+         }
+      },
+      {
+         "HOUDINI_GALLERY_PATH": {
+            "method": "append",
+            "value": [
+               "$YLS_lib/gallery"
+            ]
+         }
+      },
+      {
+         "HOUDINI_SCRIPT_PATH": {
+            "method": "append",
+            "value": [
+               "$YLS_lib/scripts"
+            ]
+         }
+      }
+   ]
+}

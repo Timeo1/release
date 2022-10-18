@@ -1,0 +1,10 @@
+{
+    "env": [
+        {
+            "LibPath": "E:/houdini_ass/Houdini_libs"
+        }
+    ],
+    "package_path" : [
+        "$LibPath/packages"
+    ]
+}

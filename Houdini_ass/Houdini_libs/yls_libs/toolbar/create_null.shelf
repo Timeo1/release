@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shelfDocument>
+  <!-- This file contains definitions of shelves, toolbars, and tools.
+ It should not be hand-edited when it is being used by the application.
+ Note, that two definitions of the same element are not allowed in
+ a single file. -->
+
+  <tool name="create_null" label="Create Null" icon="SOP_null">
+    <script scriptType="python"><![CDATA[import shelf
+import cgtk_log
+log = cgtk_log.cgtk_log('create_null')
+log.debug('debug')
+shelf.shelf_a.CreateNull.Main()]]></script>
+  </tool>
+</shelfDocument>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shelfDocument>
+  <!-- This file contains definitions of shelves, toolbars, and tools.
+ It should not be hand-edited when it is being used by the application.
+ Note, that two definitions of the same element are not allowed in
+ a single file. -->
+
+  <tool name="prune" label="Prune" icon="PLASMA_App">
+    <script scriptType="python"><![CDATA[import hou
+
+
+def setupPruneBundle(kwargs):
+    def add_nodes(bundle, nodes):
+        for node in nodes:
+            bundle.addNode(node)
+            node.setColor(pruneColor)
+
+    
+    pruneColor = hou.Color([0.05, 0.05, 0.05])
+    defColor = hou.Color([0.8, 0.8, 0.8])
+    sel = hou.selectedNodes()
+    bundle = hou.nodeBundle("prune")
+    if bundle:
+        if kwargs['altclick'] and not kwargs['ctrlclick']:
+            if sel:
+                for node in sel:
+                    bundle.removeNode(node)
+                    node.setColor(defColor)
+        elif kwargs['altclick'] and ['ctrlclick']:
+            nodes = bundle.nodes()
+            bundle.destroy()
+            for node in nodes: node.setColor(defColor)
+            return
+        else:
+            add_nodes(bundle, sel)
+    else:
+        bundle = hou.addNodeBundle("prune")
+        if sel:
+            add_nodes(bundle, sel)
+        
+               
+    
+    
+setupPruneBundle(kwargs)]]></script>
+  </tool>
+
+  <tool name="tool_4" label="New Tool" icon="PLASMA_App">
+    <script scriptType="python"><![CDATA[]]></script>
+  </tool>
+</shelfDocument>

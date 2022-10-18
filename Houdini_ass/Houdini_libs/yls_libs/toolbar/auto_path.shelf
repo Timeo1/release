@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shelfDocument>
+  <!-- This file contains definitions of shelves, toolbars, and tools.
+ It should not be hand-edited when it is being used by the application.
+ Note, that two definitions of the same element are not allowed in
+ a single file. -->
+
+  <tool name="auto_path" label="Auto_Path" icon="SOP_name">
+    <script scriptType="python"><![CDATA[import toolbar.set_out_path as set_out_path
+reload(set_out_path)
+set_out_path.main()]]></script>
+  </tool>
+</shelfDocument>

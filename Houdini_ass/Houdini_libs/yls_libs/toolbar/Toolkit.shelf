@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shelfDocument>
+  <!-- This file contains definitions of shelves, toolbars, and tools.
+ It should not be hand-edited when it is being used by the application.
+ Note, that two definitions of the same element are not allowed in
+ a single file. -->
+
+  <toolshelf name="Toolkit" label="Tool Kit">
+    <memberTool name="FitCam"/>
+    <memberTool name="OpenPath"/>
+    <memberTool name="auto_path"/>
+    <memberTool name="fbx_abc_copy"/>
+    <memberTool name="fbx_abc_paste"/>
+    <memberTool name="OpenPath"/>
+    <memberTool name="create_mantra_for_every_geo"/>
+    <memberTool name="import_file"/>
+  </toolshelf>
+</shelfDocument>

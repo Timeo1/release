@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shelfDocument>
+  <!-- This file contains definitions of shelves, toolbars, and tools.
+ It should not be hand-edited when it is being used by the application.
+ Note, that two definitions of the same element are not allowed in
+ a single file. -->
+
+  <tool name="OpenPath" label="OpenPath" icon="SOP_file">
+    <script scriptType="python"><![CDATA[import toolbar
+toolbar.openpath.main()]]></script>
+  </tool>
+
+  <tool name="OpenPath0" label="OpenPath1" icon="SOP_file">
+    <script scriptType="python"><![CDATA[import shelf
+import cgtk_log
+log = cgtk_log.cgtk_log('OpenPath')
+log.debug('debug')
+shelf.shelf_a.OpenPath.Main()]]></script>
+  </tool>
+</shelfDocument>
