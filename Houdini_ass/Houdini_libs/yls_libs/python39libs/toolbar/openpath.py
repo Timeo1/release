@@ -1,9 +1,6 @@
-# -*- coding: utf-8 -*-
-# Author: Roffive
-# date: 2016/11/29
-# e-mail: roffive.vfx@foxmail.com
 import hou
 import os
+
 def main():
         node = hou.selectedNodes()[0]
         lsparms = node.parms()

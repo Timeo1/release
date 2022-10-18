@@ -1,11 +1,5 @@
-# -*- coding: utf-8 -*-
-#    Athor：  roffive
-#     date：  2016/11/15
-#       QQ:  670729017
-# function:  将选择的节点用objmerge引用到另一个geo里面，第2步
-#     note:  在‘smile—滴水’教程的基础上加入了‘null’节点引入到geo
-#            可以选择merge类型,one by one或者together
 import hou,tempfile
+
 def main():
     plane = hou.ui.paneTabOfType(hou.paneTabType.NetworkEditor)
 
@@ -61,3 +55,5 @@ def main():
             param_objpath = "objpath%d" % i
             objpath = objMergeNode.parm(param_objpath).set( lineList[eachLine][0:-1] )
         #print "finally : ",i," objects"
+if __name__ == '__main__':
+    main()
