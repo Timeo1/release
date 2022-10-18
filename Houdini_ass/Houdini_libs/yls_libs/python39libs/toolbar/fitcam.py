@@ -1,12 +1,6 @@
-# -*- coding: utf-8 -*-
-
-import os
-import sys
 import hou
-
-
-#import init_hrpyc
 import toolutils
+
 
 class CamFit(object):
     def __init__(self, selnode, cam):
@@ -41,14 +35,15 @@ class CamFit(object):
         self.get_scale()
         null = None
         if camup.inputs() == ():
-            null = self.obj.createNode('null', 'ReWorld')
+            null = self.obj.createNode('null', 'Real_World')
             null.move(camup.position() + hou.Vector2(0, 1))
+            null.parm('scale').set(0.01)
             camup.setNextInput(null)
             null.setDisplayFlag(False)
 
         blend =  self.obj.createNode('blend', 'Blend_position')
         fetch =  self.obj.createNode('fetch', 'Fetch_NewCam')
-        newCam =  self.obj.createNode('cam', 'RenderCamera')
+        newCam =  self.obj.createNode('cam', 'Render_Camera')
 
         if self.parent.name() == 'obj':
             move_centroid = self.node.position()
@@ -78,9 +73,13 @@ class CamFit(object):
         focal = " ch(\"" + relativePath + "/focal\")"
         aperture = " ch(\"" + relativePath + "/aperture\")"
         vm_background = "`ch(\"" + relativePath + "/vm_background\")`"
+        shutter = "ch(\"" + relativePath + "/shutter\")"
+        focus = "ch(\"" + relativePath + "/focus\")"
+        fstop = "ch(\"" + relativePath + "/fstop\")"
         newCam.parm('vm_background').set(vm_background)
         newCam.setParmExpressions(dict(resx=resx, resy=resy, focal=focal,
-                                       aperture=aperture))
+                                       aperture=aperture, shutter=shutter, 
+                                       focus=focus,fstop=fstop))
 
         newCam.parm("vm_bgenable").set(0)
         newCam.parm("vm_bgenable").set(0)
@@ -92,7 +91,7 @@ def getcamlist(selnode):
     if selnodetype == 'cam':
         resultlist.append(selnode)
         return resultlist
-    elif selnodetype == 'alembicarchive':
+    elif selnodetype == 'alembicarchive' or selnodetype == 'subnet':
         allsubnode = selnode.allSubChildren()
         for node in allsubnode:
             if node.type().name() == 'cam':
@@ -108,11 +107,11 @@ def main():
         resx = resolution[1].split('-')[0]
         resy = resolution[1].split('-')[1]
         for selnode in selnodes:
-            print selnode.name()
+            #print(selnode.name())
             camlist = getcamlist(selnode)
             move_iter = 0
             for cam in camlist:
-                print cam.name()
+                #print(cam.name())
                 camset = CamFit(selnode, cam)
                 if resolution[0] == 0:
                     camset.setfit(resx, resy, move_iter)
