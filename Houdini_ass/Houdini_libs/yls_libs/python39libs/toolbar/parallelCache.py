@@ -3,8 +3,6 @@
 import hou
 import subprocess as sub
 import datetime as dt
-import sys
-import time
 
 def get_parameters( rop, threads, closeDelay):
 	hip		= hou.hipFile.path()
