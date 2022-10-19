@@ -37,11 +37,11 @@ def get_parameters( rop, threads, closeDelay):
 	scriptEnd	= scriptEnd + '\nprint ">> rendertime: ", endtime - starttime'
 	scriptEnd	= scriptEnd + '\ntime.sleep({0})'.format(closeDelay)
 	
-	print '>> hip: {0}'.format( hip)
-	print '>> rop: {0}'.format( rop.path())
-	print '>> frame range: {0} - {1}'.format( startFrame, endFrame)
-	print '>> threads: {0}'.format( threads)
-	print '>> start time: {0} \n'.format( str(dt.datetime.now()))
+	print ('>> hip: {0}'.format( hip))
+	print ('>> rop: {0}'.format( rop.path()))
+	print ('>> frame range: {0} - {1}'.format( startFrame, endFrame))
+	print ('>> threads: {0}'.format( threads))
+	print ('>> start time: {0} \n'.format( str(dt.datetime.now())))
 
 	for k in range(threads):
 		threadEnd, remainder	= start_cache(rop, k, threads, remainder, threadEnd, threadRange, scriptStart, scriptEnd)
@@ -63,7 +63,7 @@ def start_cache(rop, k, threads, remainder, threadEnd, threadRange, scriptStart,
 		scriptStart = scriptStart + '\nrop.render(({0},{1}), verbose = True)'.format(threadStart, threadEnd)
 
 	scriptStart = scriptStart + scriptEnd
-	print ">> thread: {0}, range: {1}-{2}, frames: {3}".format(k+1, threadStart, threadEnd, threadEnd - threadStart + 1)
+	print (">> thread: {0}, range: {1}-{2}, frames: {3}").format(k+1, threadStart, threadEnd, threadEnd - threadStart + 1)
 
 	# if k == 0: print scriptStart # DEBUG
 	
@@ -79,14 +79,14 @@ def get_node():
 	if len(rop) == 1 and rop[0].type().name() in goodRopTypes:
 		return rop[0]
 	else:
-		print '!!! WRONG SELECTION !!!'
+		print ('!!! WRONG SELECTION !!!')
 		return ''
 
 def main( rop = '', threads = -1, closeDelay = 60):
-	print '=' * 50
+	print('=' * 50)
 		
 	if hou.isUIAvailable() and hou.hipFile.hasUnsavedChanges():
-		print '!!! UNSAVED CHANGES !!!'
+		print('!!! UNSAVED CHANGES !!!')
 		closeDelay	= -1
 	
 	if rop == '':
@@ -96,11 +96,11 @@ def main( rop = '', threads = -1, closeDelay = 60):
 		get_parameters( rop, threads, closeDelay)
 		
 def main_v2(kwargs):
-	print '='*50
+	print('='*50)
 	
 	if hou.hipFile.hasUnsavedChanges():
 		hou.ui.setStatusMessage('..:: SAVE THE HIP ::..', hou.severityType.Error)
 	elif kwargs['ctrlclick']:
-		print 'control clicked'
+		print('control clicked')
 	elif kwargs['altclick']:
-		print 'alt clicked'
+		print('alt clicked')
