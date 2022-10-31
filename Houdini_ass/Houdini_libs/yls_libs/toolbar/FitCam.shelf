@@ -6,8 +6,9 @@
  a single file. -->
 
   <tool name="FitCam" label="FitCam" icon="OBJ_camera">
-    <script scriptType="python"><![CDATA[import toolbar
-reload(toolbar)
-toolbar.fitcam.main()]]></script>
+    <script scriptType="python"><![CDATA[import toolbar.fitcam as fitcam
+import imp
+imp.reload(fitcam)
+fitcam.main()]]></script>
   </tool>
 </shelfDocument>

@@ -6,7 +6,11 @@
  a single file. -->
 
   <tool name="fbx_abc_paste" label="Fbx Abc Paste" icon="SOP_copy">
-    <script scriptType="python"><![CDATA[import toolbar
-toolbar.fbxabcpaste.main()]]></script>
+    <script scriptType="python"><![CDATA[
+import toolbar.fbxabcpaste as fbxabcpaste
+import imp
+imp.reload(fbxabcpaste)
+fbxabcpaste.main()
+]]></script>
   </tool>
 </shelfDocument>

@@ -5,10 +5,10 @@
  Note, that two definitions of the same element are not allowed in
  a single file. -->
 
-  <tool name="import_file" label="Import File" icon="OBJ_geo">
-    <script scriptType="python"><![CDATA[import toolbar.import_file as import_file
+  <tool name="Set Sence" label="Set Sence" icon="OBJ_geo">
+    <script scriptType="python"><![CDATA[import toolbar.setsence as setsence
 import imp
-imp.reload(import_file)
-import_file .main()]]></script>
+imp.reload(setsence)
+setsence.main()]]></script>
   </tool>
 </shelfDocument>

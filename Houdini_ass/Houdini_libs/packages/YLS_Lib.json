@@ -30,10 +30,10 @@
          }
       },
       {
-         "HOUDINI_PYTHON_PANEL_PATH": {
+         "HOUDINI_PYTHON_PATH": {
             "method": "append",
             "value": [
-               "$YLS_lib/python39libs"
+               "$YLS_lib/python39"
             ]
          }
       },

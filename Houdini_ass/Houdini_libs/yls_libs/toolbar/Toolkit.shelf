@@ -14,5 +14,7 @@
     <memberTool name="OpenPath"/>
     <memberTool name="create_mantra_for_every_geo"/>
     <memberTool name="import_file"/>
+    <memberTool name="deadline"/>
+    <memberTool name="Set Sence"/>
   </toolshelf>
 </shelfDocument>

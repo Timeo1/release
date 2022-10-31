@@ -12,6 +12,7 @@ i = 0
 for n in nodes:
     geo_name = n.name()
     mn = hou.node('/out').createNode('ifd', geo_name)
+    mn.parm('camera').set('/obj/Render_Camera')
     mn.parm('forceobject').set(geo_name)
     mn.parm('vobject').set('')
     mn.move((0,i))

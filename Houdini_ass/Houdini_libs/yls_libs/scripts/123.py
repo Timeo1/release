@@ -1,18 +1,18 @@
 # coding=utf8
 
-# import os
-# import sys
-# import hou
+import os
+import sys
+import hou
 
 #添加root_path
-# try:
-#     root_path = os.environ['ROOT_PATH']
-# except KeyError, e:
-#     root_path = r'W:\app_config\release\houdini'
-#     os.environ['ROOT_PATH'] = root_path
+try:
+    root_path = os.environ['ROOT_PATH']
+except KeyError :
+    root_path = r'D:\release\Houdini_ass\Houdini_libs\yls_libs'
+    os.environ['ROOT_PATH'] = root_path
 #添加共用和私有的python库
-#sys.path.append(os.path.join(root_path, 'cgtkLibs'))
-#sys.path.append(os.path.join(root_path, 'pyLibs'))
+# sys.path.append(os.path.join(root_path, 'cgtkLibs'))
+sys.path.append(os.path.join(root_path, 'python39'))
 
 # 启动hrpyc
 #if hou.isUIAvailable():

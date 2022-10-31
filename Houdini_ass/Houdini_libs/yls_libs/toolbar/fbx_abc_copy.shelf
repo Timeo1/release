@@ -6,7 +6,10 @@
  a single file. -->
 
   <tool name="fbx_abc_copy" label="Fbx Abc Copy" icon="SOP_copy">
-    <script scriptType="python"><![CDATA[import toolbar
-toolbar.fbxabccopy.main()]]></script>
+    <script scriptType="python"><![CDATA[import toolbar.fbxabccopy as fbxabccopy
+import imp
+imp.reload(fbxabccopy)
+fbxabccopy.main()
+]]></script>
   </tool>
 </shelfDocument>
