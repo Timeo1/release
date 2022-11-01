@@ -6,16 +6,9 @@
  a single file. -->
 
   <tool name="create_mantra_for_every_geo" label="Create Mantra For Every Geo" icon="ROP_mantra">
-    <script scriptType="python"><![CDATA[import hou
-nodes = hou.selectedNodes();
-i = 0
-for n in nodes:
-    geo_name = n.name()
-    mn = hou.node('/out').createNode('ifd', geo_name)
-    mn.parm('camera').set('/obj/Render_Camera')
-    mn.parm('forceobject').set(geo_name)
-    mn.parm('vobject').set('')
-    mn.move((0,i))
-    i += 1]]></script>
+    <script scriptType="python"><![CDATA[import toolbar.createmantra as createmantra
+import imp
+imp.reload(createmantra)
+createmantra.main()]]></script>
   </tool>
 </shelfDocument>
