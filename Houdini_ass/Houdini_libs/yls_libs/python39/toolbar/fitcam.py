@@ -103,7 +103,7 @@ def main():
     selnodes = view.selectObjects('请选择一个cam或包含cam的AlembicArchive', allowed_types=['cam'])
     if len(selnodes) > 0:
         resolution = hou.ui.readInput('set Resolution', buttons=('Set', 'close'), title='set Resolution',
-                                      initial_contents='1920-1080', close_choice=1, default_choice=0)
+                                      initial_contents='2436-1125', close_choice=1, default_choice=0)
         resx = resolution[1].split('-')[0]
         resy = resolution[1].split('-')[1]
         for selnode in selnodes:

@@ -1,11 +1,10 @@
-import imp
-
-
 import os
 import hou
+import getpass
+
 
 def get_path():
-    sel_path = hou.ui.readInput('Set sence',buttons=('Set', 'close'),default_choice=0, close_choice=-1, title='Set Sence', initial_contents='copy your work path!')
+    sel_path = hou.ui.readInput('Set sence',buttons=('Set', 'close'),default_choice=0, close_choice=1, title='Set Sence', initial_contents='copy your work path!')
     return sel_path
 
 #todo
