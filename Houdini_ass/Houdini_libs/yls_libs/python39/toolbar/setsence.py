@@ -1,43 +1,45 @@
+from distutils.filelist import findall
 import os
 import hou
 import re
 import getpass
-import importallabc
 
 
 def set_path():
     sel_path = hou.ui.readInput('Set sence',buttons=('Set', 'close'),default_choice=0, close_choice=1, title='Set Sence', initial_contents='copy your work path!')
     return sel_path
 
+#'H:\projects\Football_PV\Production\Sq\S01\VFX\work'
+class SaveHip():
 
-class Sence():
-    def __init__(self, filename, camera) -> None:
-        self.filename = filename
-        self.camera = camera
-        self.FPS = 24
-        self.Frame = (0, 100)
-        
-        
+    def __init__(self, path) -> None:
+        self.path = path
+        self.filename = ''
 
+    #获取路径
     def get_path(self):
         return self.set_path()[1]
     
+    #获取用户是否确定
     def get_select(self):
         return self.set_path()[0]
 
+    #获取项目名称
     def serach_project_name(self, path):
-        pattern = re.compile(r'projects/\w+/')
-        matched = pattern.match(path, re.I)
-        return matched.group()
-    
+        pattern = re.compile(r'(?<=projects\\)\w+', re.I)
+        finded = pattern.findall(path)
+        return finded[0]
+
+    #获取镜头号 
     def serach_shot_name(self, path):
-        pattern = re.compile(r's\w+\d+/')
-        matched = pattern.match(path, re.I)
-        return matched.group()
+        pattern = re.compile(r's\w+\d+/', re.I)
+        finded = pattern.findall(path)
+        return finded[0]
     
+    #获取组别
     def serach_department_name(self, path):
-        pattern = re.compile(r'{CFX | VFX}')
-        matched = pattern.match(path, re.I)
+        pattern = re.compile(r'{cfx | vfx}', re.I)
+        matched = pattern.match(path)
         return matched.group().lower()
 
 
