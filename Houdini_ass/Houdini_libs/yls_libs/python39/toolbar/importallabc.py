@@ -3,7 +3,7 @@ import os
 import hou
 def main():
 	filePath = hou.houdiniPath()
-	abcFolder = "/import"              #�˴��滻
+	abcFolder = "/import"             
 	abcPath = filePath[0] + abcFolder   
 	geo = hou.selectedNodes()
 	if(os.path.exists(abcPath)):
