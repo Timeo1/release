@@ -1,3 +1,4 @@
+from requests import delete
 import hou
 import re
 
@@ -43,8 +44,6 @@ class CreatMantra(object):
         for node in nodes:
             if node.type().name() == 'ropnet':
                 return node
-            else:
-                return None
     
     #指定一个特定位置的输出路径
     def setpath(self):
@@ -69,14 +68,10 @@ class CreatMantra(object):
             mantra = rop.createNode('ifd', geo_name)
         else:
             mantra = hou.node('/out').createNode('ifd', geo_name)
-            mantra = rop.createNode('ifd', geo_name)
 
         self.setMantraParm(mantra, geo_name)
         return mantra
     
-
-
-
 
 
         
