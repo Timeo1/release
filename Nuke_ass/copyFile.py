@@ -85,7 +85,7 @@ class CopyFile(object):
             if not os.path.exists(target_name):
                 target_dir = os.makedirs(target_name)  
             filetype = re.compile(r".*.exr$")
-            isexr = filetype.match(name)
+            isexr =filetype.match(name)
             if isexr:
                 seq_name = name
             else:

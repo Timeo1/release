@@ -6,15 +6,16 @@
  a single file. -->
 
   <toolshelf name="Toolkit" label="Tool Kit">
+    <memberTool name="Set Sence"/>
     <memberTool name="FitCam"/>
-    <memberTool name="OpenPath"/>
+    <memberTool name="create_mantra_for_every_geo"/>
     <memberTool name="auto_path"/>
     <memberTool name="fbx_abc_copy"/>
     <memberTool name="fbx_abc_paste"/>
     <memberTool name="OpenPath"/>
-    <memberTool name="create_mantra_for_every_geo"/>
     <memberTool name="import_file"/>
+    <memberTool name="OpenPath"/>
+    <memberTool name="objmerge"/>
     <memberTool name="deadline"/>
-    <memberTool name="Set Sence"/>
   </toolshelf>
 </shelfDocument>
