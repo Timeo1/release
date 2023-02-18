@@ -9,6 +9,6 @@
     <script scriptType="python"><![CDATA[import toolbar.import_file as import_file
 import imp
 imp.reload(import_file)
-import_file .main()]]></script>
+import_file.main()]]></script>
   </tool>
 </shelfDocument>

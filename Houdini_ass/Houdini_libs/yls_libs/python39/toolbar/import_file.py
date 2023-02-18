@@ -17,16 +17,16 @@ def main():
 
     if char_len > 1:
         for obj_file in obj_files_list:
-            pattern = r'.*(\.obj)$'
+            pattern = r'.*(\.abc)$'
             rx = re.compile(pattern)
             result = rx.match(obj_file)
             if(result!=None): 
-                obj_node = Loader.createNode('file', obj_file)
-                obj_node.parm('file').set(obj_dir_path + obj_file)
+                obj_node = Loader.createNode('alembic', obj_file)
+                obj_node.parm('fileName').set(obj_dir_path + obj_file)
                 obj_node_list.append(obj_node)
 
         
-        Switch_node = Loader.createNode('switch', 'obj_switch')
+        Switch_node = Loader.createNode('merge', 'abc_merge')
 
         for node in obj_node_list:
             Switch_node.setNextInput(node)

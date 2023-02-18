@@ -16,6 +16,5 @@
     <memberTool name="import_file"/>
     <memberTool name="OpenPath"/>
     <memberTool name="objmerge"/>
-    <memberTool name="deadline"/>
   </toolshelf>
 </shelfDocument>

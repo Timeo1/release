@@ -75,7 +75,6 @@ class CreatMantra(object):
 
 
         
-        
 def main():
     nodes = hou.selectedNodes()
     i = 0
