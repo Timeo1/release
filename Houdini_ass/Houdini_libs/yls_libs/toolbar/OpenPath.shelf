@@ -7,8 +7,8 @@
 
   <tool name="OpenPath" label="OpenPath" icon="SOP_file">
     <script scriptType="python"><![CDATA[import toolbar.openpath as openpath
-import imp
-imp.reload(openpath)
+import importlib
+importlib.reload(openpath)
 openpath.main()
 ]]></script>
   </tool>

@@ -14,6 +14,7 @@
     <memberTool name="fbx_abc_paste"/>
     <memberTool name="OpenPath"/>
     <memberTool name="import_file"/>
+    <memberTool name="script"/>
     <memberTool name="OpenPath"/>
     <memberTool name="objmerge"/>
   </toolshelf>

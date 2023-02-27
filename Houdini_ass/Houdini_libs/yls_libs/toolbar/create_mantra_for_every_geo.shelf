@@ -7,8 +7,8 @@
 
   <tool name="create_mantra_for_every_geo" label="Create Mantra For Every Geo" icon="ROP_mantra">
     <script scriptType="python"><![CDATA[import toolbar.createmantra as createmantra
-import imp
-imp.reload(createmantra)
+import importlib
+importlib.reload(createmantra)
 createmantra.main()]]></script>
   </tool>
 </shelfDocument>

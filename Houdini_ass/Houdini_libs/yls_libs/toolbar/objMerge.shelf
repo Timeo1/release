@@ -7,8 +7,8 @@
 
   <tool name="objmerge" label="Obj Merge" icon="SOP_object_merge">
     <script scriptType="python"><![CDATA[import toolbar.objmerge as objmerge
-import imp
-imp.reload(objmerge)
+import importlib
+importlib.reload(objmerge)
 objmerge.main()]]></script>
   </tool>
 </shelfDocument>

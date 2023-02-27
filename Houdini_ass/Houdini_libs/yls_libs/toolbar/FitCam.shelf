@@ -7,8 +7,8 @@
 
   <tool name="FitCam" label="FitCam" icon="OBJ_camera">
     <script scriptType="python"><![CDATA[import toolbar.fitcam as fitcam
-import imp
-imp.reload(fitcam)
+import importlib
+importlib.reload(fitcam)
 fitcam.main()]]></script>
   </tool>
 </shelfDocument>

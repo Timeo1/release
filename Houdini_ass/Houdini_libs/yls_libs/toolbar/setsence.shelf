@@ -7,8 +7,8 @@
 
   <tool name="Set Sence" label="Set Sence" icon="OBJ_geo">
     <script scriptType="python"><![CDATA[import toolbar.setsence as setsence
-import imp
-imp.reload(setsence)
+import importlib
+importlib.reload(setsence)
 setsence.main()]]></script>
   </tool>
 </shelfDocument>

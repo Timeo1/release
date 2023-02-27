@@ -33,6 +33,10 @@ class CopyFile(object):
 
     def get_reads_path(self, input_nodes, method):
         finalmsg = []
+        if not isinstance(input_nodes, list):
+            inputs = []
+            inputs.append(input_nodes)
+            input_nodes = inputs
         for i in input_nodes:
             name = nuke.filename(i)
             if name is None:
@@ -55,8 +59,9 @@ class CopyFile(object):
         pattern = re.compile(r".*vfx/", re.I)
         _a = pattern.match(path)
         _v = ver.findall(path)
+        if _v:
+            version = _v[0]
         source_path = _a.group()
-        version = _v[0]
         target_path=  source_path + "torender/" + version
         return target_path
 
@@ -85,7 +90,7 @@ class CopyFile(object):
             if not os.path.exists(target_name):
                 target_dir = os.makedirs(target_name)  
             filetype = re.compile(r".*.exr$")
-            isexr =filetype.match(name)
+            isexr = filetype.match(name)
             if isexr:
                 seq_name = name
             else:
@@ -94,14 +99,7 @@ class CopyFile(object):
             node['file'].setValue(input_file)
  
             for file in os.listdir(dir):
-                if isexr:
-                    basename = re.sub("####", r"\d+",name)
-                else:
-                    basename = name+"."+"\d+"+".exr"
-
-                pattern = re.compile(basename)
-                matched = pattern.match(file)
-                if matched:
+                if file.endswith(".exr"):
                     file_fullpath = os.path.join(dir, file)
                     try:
                         shutil.copy2(file_fullpath, target_name)
